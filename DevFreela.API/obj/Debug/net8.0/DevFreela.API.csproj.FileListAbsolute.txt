@@ -30,3 +30,4 @@ D:\Projetos\DevFreela\DevFreela.API\obj\Debug\net8.0\refint\DevFreela.API.dll
 D:\Projetos\DevFreela\DevFreela.API\obj\Debug\net8.0\DevFreela.API.pdb
 D:\Projetos\DevFreela\DevFreela.API\obj\Debug\net8.0\DevFreela.API.genruntimeconfig.cache
 D:\Projetos\DevFreela\DevFreela.API\obj\Debug\net8.0\ref\DevFreela.API.dll
+D:\Projetos\DevFreela\DevFreela.API\obj\Debug\net8.0\DevFreela.API.sourcelink.json

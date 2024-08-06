@@ -1,6 +1,7 @@
 ﻿using DevFreela.API.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace DevFreela.API.Controllers
 {
@@ -8,16 +9,24 @@ namespace DevFreela.API.Controllers
     [ApiController]
     public class ProjectsController : ControllerBase
     {
+        private readonly FreeLanceTotalCostConfig _config;
+        public ProjectsController(IOptions<FreeLanceTotalCostConfig> options)
+        {
+            _config = options.Value;
+        }
         //GET /api/Projects/1234
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
+            throw new Exception("Teste handler");
             return Ok();
         }
         //POST /api/Projects
         [HttpPost]
         public IActionResult Post(CreateProjectInputModel model)
         {
+            if(model.TotalCost<_config.Minimum || model.TotalCost>_config.Maximum)
+                return BadRequest("Número fora dos limites");
             return CreatedAtAction(nameof(GetById), new { id=1},model);
         }
 
